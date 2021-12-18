@@ -6,21 +6,21 @@
 ## Summary
 
 ```
-// create transaction object
+// 1. create transaction object
 const feeDelegatedTx = caver.transaction.feeDelegatedValueTransfer.create({
     from: sendAccount.address,
     value: caver.utils.toPeb(5, 'KLAY'),
     to: receiveAccount.address,
     gas: 50000
-})
+});
 
-// sender signature
-await feeDelegatedTx.sign(sendAccount.keyring)
+// 2. Sender signature
+await feeDelegatedTx.sign(sendAccount.keyring);
 
-// fee delegator signature
-await feeDelegatedTx.signAsFeePayer(feeAccount.keyring)
+// 3. Fee delegator signature
+await feeDelegatedTx.signAsFeePayer(feeAccount.keyring);
 
-// // transaction send
+// 4. Send transaction
 await caver.rpc.klay.sendRawTransaction(feeDelegatedTx);
 
 ```

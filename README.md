@@ -1,2 +1,4 @@
 # klaytn_fee_delegated
-Fee delegated code
+
+> 클레이튼 블록체인 수수료 위임 코드
+
